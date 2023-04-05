@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POWER106FM LOGIN</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+               <img src="IMAGE/power106.png" alt="power">
+            </div>
+            <div class="toggle">
+                <a href="#"><ion-icon name="apps-outline"></ion-icon></a>
+            </div>
+            <ul class="menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT<a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card">
+            <div class="inner-box" id="card">
+                <div class="card-front">
+                    <h2>LOGIN</h2>
+                    <form>
+                        <input type="email" class="input-box" placeholder="EMAIL" required>
+                        <input type="password" class="input-box" placeholder="PASSWORD" required>
+                        <button type="submit" class="submit-btn">SUBMIT</button>
+                        <input type="checkbox"><span>Remember Me</span>
+                    </form>
+                    <button type="button" class="btn" onclick="openRegister()" >IM NEW HERE</button>
+                    <a href="" class="forgot">Forgot Password</a>
+                </div>
+                <div class="card-back">
+                    <h2>REGISTER</h2>
+                    <form>
+                        <input type="email" class="input-box" placeholder="EMAIL" required>
+                        <input type="password" class="input-box" placeholder="PASSWORD" required>
+                        <button type="submit" class="submit-btn">SUBMIT</button>
+                        <input type="checkbox"><span>Remember Me</span>
+                    </form>
+                    <button type="button" class="btn" onclick="openLogin()">I HAVE AN ACCOUNT</button>
+                    <a href="#" class="forgot">Forgot Password</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script> 
+    
+    
+    var card = document.getElementById("card");
+    function openRegister(){
+        card.style.transform = "rotateY(-180deg)";
+    }
+    function openLogin(){
+        card.style.transform = "rotateY(0deg)";
+    }
+    
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            $(".toggle").on("click", function(){
+                if($(".menu").hasClass("active")){
+                    $(".menu").removeClass("active");
+                    $(this).find("a").html("<ion-icon name= 'apps-outline'></ion-icon>");
+                } else{
+                    $(".menu").addClass("active");
+                    $(this).find("a").html("<ion-icon name= 'close-outline'></ion-icon>");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
